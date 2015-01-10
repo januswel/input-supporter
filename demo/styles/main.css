@@ -1,0 +1,13 @@
+/*
+ * main.css
+ * */
+
+input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid {
+    background-color: red;
+    color: white;
+}
+
+.remaining-letters {
+    color: gray;
+    font-size: small;
+}

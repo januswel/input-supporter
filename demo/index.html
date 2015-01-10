@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html lang="ja" ng-app="demo">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="author" content="janus_wel">
+
+  <link rel="stylesheet" href="styles/main.css" media="all">
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js"></script>
+  <script src="../input-supporters.js"></script>
+  <script src="scripts/main.js"></script>
+
+  <title>remain directive demo</title>
+</head>
+
+<body ng-controller="demo-controller as demo">
+  <form>
+    <table>
+      <tr>
+        <td><label>name</label></td>
+        <td>
+          <input type="text" ng-model="name" ng-maxlength="8" remaining-letters="nameRemainingLetters">
+          <span class="remaining-letters">{{nameRemainingLetters}}/8</span>
+      </tr>
+      <tr>
+        <td><label>password</label></td>
+        <td>
+          <input type="password" ng-model="password" ng-maxlength="8" remaining-letters="passwordRemainingLetters">
+          <span class="remaining-letters">{{passwordRemainingLetters}}/8</span>
+        </td>
+      </tr>
+      <tr>
+        <td><label>remarks</label></td>
+        <td>
+          <textarea ng-model="remarks" ng-maxlength="32" remaining-letters="remarksRemainingLetters"></textarea>
+          <span class="remaining-letters">{{remarksRemainingLetters}}/32</span>
+        </td>
+      </tr>
+    </ul>
+  </form>
+</body>
+</html>
