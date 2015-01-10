@@ -1,6 +1,12 @@
 # input-supporter
 input supporters on AngularJS
 
+demo
+----
+
+http://januswel.github.io/input-supporter/demo/
+
+
 directives
 ----------
 
