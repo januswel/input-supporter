@@ -11,3 +11,17 @@ input.ng-dirty.ng-invalid, textarea.ng-dirty.ng-invalid {
     color: gray;
     font-size: small;
 }
+
+.password-strength {
+    margin-left: 8px;
+    font-size: small;
+}
+.password-strength>.very-weak, .password-strength>.weak {
+    color: red;
+}
+.password-strength>.efficient {
+    color: green;
+}
+.password-strength>.strong, .password-strength>.very-strong {
+    color: blue;
+}

@@ -27,8 +27,15 @@
       <tr>
         <td><label>password</label></td>
         <td>
-          <input type="password" ng-model="password" ng-maxlength="8" remaining-letters="passwordRemainingLetters">
-          <span class="remaining-letters">{{passwordRemainingLetters}}/8</span>
+          <input type="password" ng-model="password" ng-maxlength="16" remaining-letters="passwordRemainingLetters" password-strength="passwordStrength">
+          <span class="remaining-letters">{{passwordRemainingLetters}}/16</span>
+          <span class="password-strength">
+            <span ng-show="passwordStrength < 0.2" class="very-weak">very weak</span>
+            <span ng-show="0.2 <= passwordStrength && passwordStrength < 0.4" class="weak">weak</span>
+            <span ng-show="0.4 <= passwordStrength && passwordStrength < 0.6" class="efficient">efficient</span>
+            <span ng-show="0.6 <= passwordStrength && passwordStrength < 0.8" class="strong">strong</span>
+            <span ng-show="0.8 <= passwordStrength" class="very-strong">very strong</span>
+          </span>
         </td>
       </tr>
       <tr>
