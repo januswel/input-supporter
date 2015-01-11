@@ -20,15 +20,16 @@
         return {
             restrict: 'A',
             require: 'ngModel',
-            scope: {
-                remainingLetters: '='
-            },
             link: function ($scope, element, attrs, modelController) {
                 var maxlength = getMaxlength(attrs);
+                var propertyName = attrs.remainingLetters;
+                if (!propertyName) {
+                    throw new Error('Specify property name to store a number of remaining letters by "remaining-letters" attr');
+                }
                 $scope.$watch(function () {
                     return modelController.$viewValue;
                 }, function (newValue) {
-                    $scope.remainingLetters = maxlength - (newValue || '').length;
+                    $scope[propertyName] = maxlength - (newValue || '').length;
                 });
             }
         };
